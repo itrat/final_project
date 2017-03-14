@@ -1,0 +1,211 @@
+﻿@model frontEndFyp.Models.User
+@{
+    ViewBag.Title = "home";
+    Layout = "~/Views/Shared/frontend.cshtml";
+}<link href="~/Content/newdesign/css/agency.min.css" rel="stylesheet">
+<style>
+    ul {
+        list-style-type: none;
+        margin-left: 30px 30px 0px 0px;
+        padding: 30px 30px 0x 0px;
+        overflow: hidden;
+        background-color: #664879;
+        width: auto;
+    }
+
+    .cont #cont {
+        margin-left: 30px 30px 0px 0px;
+        padding: 30px 30px 0x 0px;
+    }
+
+    #bs-example-navbar-collapse-1 {
+        margin-left: 30px 30px 0px 0px;
+        padding: 30px 30px 0x 0px;
+    }
+
+    li {
+        float: left;
+    }
+
+    .nav navbar-nav navbar-right li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    nav navbar-nav navbar li a:hover:not(.active) {
+        background-color: #fed136;
+    }
+
+    .active {
+        background-color: #4CAF50;
+    }
+
+    body {
+        background-color: #f5f2f2;
+    }
+</style>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Eventi</title>
+    <!-----Including CSS for different screen sizes----->
+    <link rel="stylesheet" type="text/css" href="~/Content/forms/responsiveform.css">
+    <link rel="stylesheet" media="screen and (max-width: 1200px) and (min-width: 601px)" href="~/Content/forms/responsiveform1.css" />
+    <link rel="stylesheet" media="screen and (max-width: 600px) and (min-width: 351px)" href="~/Content/forms/responsiveform2.css" />
+
+    <link rel="stylesheet" media="screen and (max-width: 350px)" href="~/Content/forms/responsiveform3.css" />
+</head>
+<body>
+    <nav id="mainNav" style="background-color: #664879" class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container">
+
+            <!-- Brand and toggle get grouped for better mobile display -->
+
+
+            <div class="navbar-header page-scroll">
+
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+
+                <a class="navbar-brand page-scroll" style="color: yellow; font-size: 50px;padding-left:10px" href="#page-top">Eventi</a></br>
+
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" class="cont">
+                <ul class="nav navbar-nav navbar" style="margin-top:5px; margin-left:70px">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a href="home" class="page-scroll">Home</a>
+                    </li>
+
+                    <li>
+                        <a class="page-scroll" href="#portfolio">Categories</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#about">About</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#team">Team</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact">Contact</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="faq">FAQ</a>
+                    </li>
+                    <li>
+                        <a href="../frontpages/privacypolicy">Privacy Policy</a>
+                    </li>
+                </ul>
+                <div style="display: flex;float:right;margin-right:85px;">
+                    <div style="padding-right:5px">
+                        <a href="../semiadmin/create" style="height:40px;width:100px;">Sign In</a>
+                    </div>
+                    <div style=" margin-right:5px">
+                        <a href="../semiadmin/create" style="height: 40px; width: 100px;">Sign Up</a>
+                    </div>
+
+                </div>
+                
+
+
+            </div>
+
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+
+    </nav>
+
+    <div id="envelope" style="background-color: #ffffff; margin-top: 100px; ">
+        <header style="background-color: #5b9aa0; background-image: none">
+            <h2>User Information Details</h2>
+
+        </header>
+        <hr>
+        <form action="#" method="post">
+            <div class="form-group">
+                <label>First Name </label>
+                <input type="text" value="@Html.DisplayFor(model => model.User_F_Name)" width="100px;" disabled="" required="required">
+            </div>
+            <div class="form-group">
+                <label> Last Name</label>
+                <input type="text" class="form-control" value="@Html.DisplayFor(model => model.User_L_Name)" width="100px;" disabled="" required="required">
+            </div>
+            <div class="form-group">
+                <label>CNIC<span style="color:grey">(optional)</span> </label><br>
+                <input type="text" class="form-control" value="@Html.DisplayFor(model => model.User_CNIC)" width="100px;" disabled="" maxlength="13">
+            </div>
+            <div class="form-group">
+                <label> Email</label>
+                <input class="form-control" value="@Html.DisplayFor(model => model.User_Email)" disabled="" width="100px;" required="required">
+            </div>
+            <div class="form-group">
+                <label>   Contact Number </label>
+                <input type="text" class="form-control" value="@Html.DisplayFor(model => model.User_Phone_)" disabled="" width="100px;" required=" required">
+            </div>
+
+            <div class="form-group">
+                <label> Password </label>
+                <input name="password" value="" disabled="" class="form-control" width="100px;" required="required">
+            </div>
+
+            <div class="form-group">
+                <label> Postal Address </label>
+                <textarea rows="10" cols="15" class="form-control" value="@Html.DisplayFor(model => model.User_Address)" disabled="" required="required"></textarea>
+
+            </div>
+
+        </form>
+    </div>
+</body>
+</html>
+<script>
+    ///////////////////allowing only numbers
+
+    function isNumberKey(evt) {
+        var charCode = (evt.which) ? evt.which : evt.keyCode;
+        if (charCode != 46 && charCode > 31
+        && (charCode < 48 || charCode > 57))
+            return false;
+
+        return true;
+    }
+
+    ///////////////////allowing only alphabets
+    function AllowAlphabet(evt) {
+        var charCode = (evt.which) ? evt.which : evt.keyCode;
+        if ((charCode > 64 && charCode < 91))
+            return true;
+        else if ((charCode > 96 && charCode < 123))
+            return true;
+        else if ((charCode == 32))
+            return true
+        else
+            return false;
+    }
+    ///////////////////validation for phone number and cnic
+    function ValidateNo() {
+        var phoneNo = document.getElementById('txtPhoneNo');
+
+        if (phoneNo.value == "" || phoneNo.value == null) {
+            alert("Please enter your Mobile No.");
+            return false;
+        }
+        if (phoneNo.value.length < 10 || phoneNo.value.length > 10) {
+            alert("Mobile No. is not valid, Please Enter 10 Digit Mobile No.");
+            return false;
+        }
+
+        alert("Success ");
+        return true;
+    }
+
+</script>

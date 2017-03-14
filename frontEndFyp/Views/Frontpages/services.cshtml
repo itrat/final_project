@@ -1,0 +1,978 @@
+﻿@using System.Web.Helpers;
+@{
+    ViewBag.Title = "faq";
+    Layout = "~/Views/Shared/frontend.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="~/Scripts/jquery-1.8.2.js"></script>
+
+    <link rel="stylesheet" href="~/Content/newdesign/loungetemplate/css/reset.css" type="text/css" media="all">
+    <link rel="stylesheet" href="~/Content/newdesign/loungetemplate/css/layout.css" type="text/css" media="all">
+    <link rel="stylesheet" href="~/Content/newdesign/loungetemplate/css/style.css" type="text/css" media="all">
+    <link href="~/Content/newdesign/css/agency.min.css" rel="stylesheet">
+    <style>
+        .rating-static {
+            width: 60px;
+            height: 16px;
+            display: block;
+            background: url('http://www.itsalif.info/blogfiles/rating/star-rating.png') 0 0 no-repeat;
+        }
+
+        .rating-50 {
+            background-position: 0 0;
+        }
+
+        .rating-40 {
+            background-position: -12px 0;
+        }
+
+        .rating-30 {
+            background-position: -24px 0;
+        }
+
+        .rating-20 {
+            background-position: -36px 0;
+        }
+
+        .rating-10 {
+            background-position: -48px 0;
+        }
+
+        .button {
+            background-color: cornflowerblue;
+            color: wheat;
+            border: none;
+            width: 100px;
+            height: 40px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            padding-top: 8px;
+            font-size: 12px;
+           
+    ul {
+        list-style-type: none;
+        margin-left: 30px 30px 0px 0px;
+        padding: 30px 30px 0x 0px;
+        overflow: hidden;
+        background-color: #664879;
+        width: auto;
+    }
+
+    .cont #cont {
+        margin-left: 30px 30px 0px 0px;
+        padding: 30px 30px 0x 0px;
+    }
+
+    #bs-example-navbar-collapse-1 {
+        margin-left: 30px 30px 0px 0px;
+        padding: 30px 30px 0x 0px;
+    }
+
+    li {
+        float: left;
+    }
+
+    .nav navbar-nav navbar-right li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    nav navbar-nav navbar li a:hover:not(.active) {
+        background-color: #fed136;
+    }
+
+    .active {
+        background-color: #4CAF50;
+    }
+
+    body {
+        background-color: #f5f2f2;
+    
+
+        }
+    </style>
+    <script>
+
+        $(document).ready(function () {
+            
+            var t = @Html.Raw(Json.Encode(ViewBag.length_of_list));
+            var t1 = @Html.Raw(Json.Encode(ViewBag.r_img_1));
+                for(var i = 0 ; i< t; i++)
+                {
+                    var o = t1[i];
+                    $(document).on('click',"#"+t1[i],function(){
+                        var t2= t1[i];
+                        var url = "/Detail_of_Restaurant/index?eve1=" + this.id;
+                        window.location.href = url;
+                    });
+            }
+            });
+        </script>
+
+    <script>
+
+    $(document).ready(function () {
+
+        var t = @Html.Raw(Json.Encode(ViewBag.length_of_list));
+        var t1 = @Html.Raw(Json.Encode(ViewBag.r_img_1));
+
+        for(var i = 0 ; i< t; i++)
+        {
+            var o = t1[i];
+            $(document).on('click',".hr"+t1[i],function(e){
+                var t2= t1[i];
+                e.stopPropagation();
+                var url = "/Reservation/create?eve1=" + this.id;
+                window.location.href = url;
+              
+            });
+
+        }
+    });
+    </script>
+        </head>
+        <body>
+            <div class="container" style="background-color: lightgrey; width: 100%;">
+                <header>
+                    <nav id="mainNav" style="background-color: #664879" class="navbar navbar-default navbar-custom navbar-fixed-top">
+                        <div class="container">
+
+                            <!-- Brand and toggle get grouped for better mobile display -->
+
+
+                            <div class="navbar-header page-scroll">
+
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                                </button>
+
+                                <a class="navbar-brand page-scroll" style="color: yellow; font-size: 50px;padding-left:10px" href="#page-top">Eventi</a></br>
+
+                            </div>
+                            <!-- Collect the nav links, forms, and other content for toggling -->
+                            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" class="cont">
+                                <ul class="nav navbar-nav navbar" style="margin-top:5px; margin-left:70px">
+                                    <li class="hidden">
+                                        <a href="#page-top"></a>
+                                    </li>
+                                    <li>
+                                        <a href="home" class="page-scroll">Home</a>
+                                    </li>
+
+                                    <li>
+                                        <a class="page-scroll" href="#portfolio">Categories</a>
+                                    </li>
+                                    <li>
+                                        <a class="page-scroll" href="#about">About</a>
+                                    </li>
+                                    <li>
+                                        <a class="page-scroll" href="#team">Team</a>
+                                    </li>
+                                    <li>
+                                        <a class="page-scroll" href="#contact">Contact</a>
+                                    </li>
+                                    <li>
+                                        <a class="page-scroll" href="faq">FAQ</a>
+                                    </li>
+                                    <li>
+                                        <a href="../frontpages/privacypolicy">Privacy Policy</a>
+                                    </li>
+                                </ul>
+                                <div style="display: flex;float:right;margin-right:85px;">
+                                    <div style="padding-right:5px">
+                                        <a href="../semiadmin/create" style="height:40px;width:100px;">Sign In</a>
+                                    </div>
+                                    <div style=" margin-right:5px">
+                                        <a href="../semiadmin/create" style="height: 40px; width: 100px;">Sign Up</a>
+                                    </div>
+
+                                </div>
+                                <!--     <div style="float:right;margin-right:-40px">
+                          <input type="text" name="search" placeholder="  Search Hall/Restaurant.." style="height:2em; width:15em; margin-top:1px;" id="hwq" />
+                          <span> <button style="background-color: blue; color: white; margin-top: 1px; height:30px"><a href="" id="go">Search</a></button></span>
+                      </div>
+                    -->
+
+                            </div>
+
+                            <!-- /.navbar-collapse -->
+                        </div>
+                        <!-- /.container-fluid -->
+
+                    </nav>
+
+                </header>
+                <div>
+                    <article id="content">
+                        <div class="box1">
+                            <div class="wrapper">
+                                <div class="row col-lg-3 col-md-3 col-xs-3 col-sm-3" style="border: groove; border-width: 1px; margin-left: 20px; margin-right: 20px;">
+                                    <form action="#" id="form2">
+                                        <div>
+                                            <h2 style="font-family: Circular,Helvetica Neue,Helvetica,Arial,sans-serif ; font-weight:100;">Search Here Hall/Restaurant</h2>
+                                            <input class="sea" type="text" name="search" placeholder="Search Hall/Restaurant.." style="border:solid;" id="searchterm"><input type="button" id="go" value="Search" style="width:70px; height:29px;margin-left:40px; background-color:cornflowerblue; color:wheat; margin-top:40px;" /><br />
+                                        
+                                        </div>
+                                        <div>
+                                            <h2 style="font-family: Circular,Helvetica Neue,Helvetica,Arial,sans-serif ; font-weight:100;">Categories</h2>
+
+                                            <label><input type="checkbox" class="myCheckbox" name="Blanks" id="chk" value="Parties" onclick="SomeMethod(this)"> Parties</label><br>
+                                            <label><input type="checkbox" class="myCheckbox" name="Blanks" id="chk" value="Conferences" onclick="SomeMethod(this)">Conferences</label><br>
+                                            <label><input type="checkbox" class="myCheckbox" name="Blanks" id="chk" value="Marriage" onclick="SomeMethod(this)">Weddings</label><br>
+                                            <label><input type="checkbox" class="myCheckbox" name="Blanks" id="chk" value="BirthDay" onclick="SomeMethod(this)">Birthdays</label><br>
+                                            <label><input type="checkbox" class="myCheckbox" name="Blanks" id="chk" value="Launching Ceremonies" onclick="SomeMethod(this)">Launching Ceremonies</label><br>
+                                            <label><input type="checkbox" class="myCheckbox" name="Blanks" id="chk" value="Seminars" onclick="SomeMethod(this)">Seminars</label><br>
+                                        </div>
+                                        <div>
+                                            <h2 style="font-family: Circular,Helvetica Neue,Helvetica,Arial,sans-serif ; font-weight:100;">Location</h2>
+                                            <select style="border:solid;" id="area_list1">
+                                                <option value="all_areas">ALL</option>
+                                                @foreach (var item in ViewBag.r_img)
+                                        {
+                                            if(@item.Area != null)
+                                            {
+                                            <option value="@item.Area">@item.Area</option>
+                                            }
+                                        }
+                                            </select>
+                                        </div>
+
+                                        <div>
+                                            <h2 style="font-family: Circular,Helvetica Neue,Helvetica,Arial,sans-serif ; font-weight:100;">Pricing</h2>
+
+                                            <select style="border:solid;">
+                                                <option value="" disabled selected>From</option>
+                                                <option value="volvo">10,000</option>
+                                                <option value="saab">20,000</option>
+                                                <option value="opel">30,000</option>
+                                                <option value="audi">40,000</option>
+                                                <option value="audi">50,000</option>
+                                            </select>
+
+                                            <select style="border:solid; margin-top:5px;">
+                                                <option value="" disabled selected>To</option>
+                                                <option value="volvo">10,000</option>
+                                                <option value="saab">20,000</option>
+                                                <option value="opel">30,000</option>
+                                                <option value="audi">40,000</option>
+                                                <option value="audi">50,000</option>
+                                            </select>
+
+                                        </div>
+
+                                        <h2 style="font-family: Circular,Helvetica Neue,Helvetica,Arial,sans-serif ; font-weight:100;">Ratings</h2>
+                                        <input type="checkbox" style="float:left;" name="Blanks1" id="chk1" value="5" onclick="Through_Ratings_drop(this)"><span class="rating-static rating-50" style="margin-left:20px;"></span> <br>
+                                        <input type="checkbox" style="float:left;" name="Blanks1" id="chk1" value="4" onclick="Through_Ratings_drop(this)"><span class="rating-static rating-40" style="margin-left:20px;"></span> <br>
+                                        <input type="checkbox" style="float:left;" name="Blanks1" id="chk1" value="3" onclick="Through_Ratings_drop(this)"><span class="rating-static rating-30" style="margin-left:20px;"></span> <br>
+                                        <input type="checkbox" style="float:left;" name="Blanks1" id="chk1" value="2" onclick="Through_Ratings_drop(this)"><span class="rating-static rating-20" style="margin-left:20px;"></span> <br>
+                                        <input type="checkbox" style="float:left;" name="Blanks1" id="chk1" value="1" onclick="Through_Ratings_drop(this)"><span class="rating-static rating-10" style="margin-left:20px;"></span> <br>
+                                    </form>
+
+
+                                </div>
+                                <script>
+                                    $(document).ready(function () {
+                                        $("#go").click(function () {
+                                            $('#div1').html("");
+                                            Through_SearchBox();
+                                        });
+                                    });
+    </script>
+                               
+                        <style>
+                            .choose:hover {
+                                background-color: beige;
+                                cursor: pointer;
+                            }
+                        </style>
+                        <div class="row col-lg-10 col-md-10 col-xs-10 col-sm-10" >
+                            <div id="div1">
+                            </div>
+                            <div id="div2"></div>
+                            <script type="text/javascript">
+                                $(document).ready(function () {
+                                    var o = @Html.Raw(Json.Encode(ViewBag.home10));
+                                    var o1 = @Html.Raw(Json.Encode(ViewBag.home1));
+                                    var t =  (@Html.Raw(Json.Encode(ViewBag.r_img_1)));
+                                    $.ajax({
+                                        type: "POST",
+                                        url: "/Frontpages/On_Load_get",
+                                        traditional: true,
+                                        data: JSON.stringify({
+                                            cate : o 
+                                        }),
+                                        contentType: 'application/json; charset=utf-8',
+                                        success: function (result) {
+                                            $('#div2').html("");
+                                            
+                                            $.dropdownlist_sle(result);
+                                        },
+                                        error: function () { alert("error" + result) }
+                                    });
+    });
+</script>
+                            <script>
+                                $(document).ready(function () {
+                                    $("#area_list1").bind("change", function () {
+                                        var myJsVariable = '@ViewBag.home10';
+
+                                        $('#div2').html("");
+                                        var vals = [];
+                                        var e = [];
+                                        $('input:checkbox[name=Blanks1]:checked').each(function () {
+                                            vals.push($(this).val());
+                                        });
+                                        var checkboxData = vals;
+                                        var vals1 = [];
+                                        var e1 = [];
+                                        $('input:checkbox[name=Blanks]:checked').each(function () {
+                                            vals1.push($(this).val());
+                                        });
+                                        var checkboxData1 = vals1;
+                                        var ty1 = checkboxData1.length;
+                                        var ty = checkboxData.length;
+                                        if ($("#area_list1").val() == "all_areas") {
+                                            $.ajax({
+                                                type: "POST",
+                                                url: "/Frontpages/On_Load_get",
+                                                traditional: true,
+                                                data: JSON.stringify({
+                                                    cate: myJsVariable
+                                                }),
+                                                contentType: 'application/json; charset=utf-8',
+                                                success: function (result) {
+                                                    $('#div2').html("");
+
+                                                    $.dropdownlist_sle(result);
+                                                },
+                                                error: function () { alert("error" + result) }
+                                            });
+                                        }
+                                        else {
+
+                                            var stateId = $("#area_list1").val();
+                                            if(ty==0 &&ty1==0)
+                                            {
+                                                $.ajax({
+                                                    type: "POST",
+                                                    url: "/Frontpages/Through_Area",
+                                                    traditional: true,
+                                                    contentType: 'application/json; charset=utf-8',
+                                                    data: JSON.stringify({
+                                                        stateID: stateId, cate: myJsVariable
+                                                    }),
+                                                    success: function (result) {
+                                                        $("#div2").html("");
+                                                        $.dropdownlist_sle(result);
+                                                    },
+                                                    error: function () { alert("error" + result) }
+                                                });
+                                            }
+                                            else if(ty==0 && ty1!=0)
+                                            {
+                                                $.ajax({
+                                                    type: 'POST',
+                                                    url: '/Frontpages/Through_Categories_and_Area',
+                                                    data: JSON.stringify({ even:stateId , cate: myJsVariable, eve1 :  checkboxData1 }),
+                                                    dataType: 'json',
+                                                    contentType: 'application/json; charset=utf-8',
+                                                    success: function (result) {
+                        
+                                                        if(result!="[]")
+                                                        {
+                                                            $.dropdownlist_sle(result);
+                                                        }
+
+                                                        else
+                                                        {
+                                                            $("#div1").html("");
+                                                            $('#div2').html("There is no restaurant for this event");
+                                                        }
+                                                    },
+                                                    error: function (err, result) {
+                                                        alert("Error in delete" + err.responseText);
+                                                    },
+              
+                                                });
+                                            }
+                                            else if(ty!=0 && ty1==0)
+                                            {
+                                                $.ajax({
+                                                    type: 'POST',
+                                                    url: '/Frontpages/Through_Ratings_and_Area',
+                                                    data: JSON.stringify({ even:stateId , cate: myJsVariable, eve1 :  checkboxData }),
+                                                    dataType: 'json',
+                                                    contentType: 'application/json; charset=utf-8',
+                                                    success: function (result) {
+                        
+                                                        if(result!="[]")
+                                                        {
+                                                            $.dropdownlist_sle(result);
+                                                        }
+
+                                                        else
+                                                        {
+                                                            $("#div1").html("");
+                                                            $('#div2').html("There is no restaurant for this event");
+                                                        }
+                                                    },
+                                                    error: function (err, result) {
+                                                        alert("Error in delete" + err.responseText);
+                                                    },
+              
+                                                });
+                                            }
+                                            else if(ty!=0 && ty1!=0)
+                                            {
+                                                $.ajax({
+                                                    type: 'POST',
+                                                    url: '/Frontpages/Through_Categories_and_Area_and_Ratings',
+                                                    data: JSON.stringify({ even:checkboxData , cate: myJsVariable, eve1 :  checkboxData1 , eve2:stateId }),
+                                                    dataType: 'json',
+                                                    contentType: 'application/json; charset=utf-8',
+                                                    success: function (result) {
+                        
+                                                        if(result!="[]")
+                                                        {
+                                                            $.dropdownlist_sle(result);
+                                                        }
+
+                                                        else
+                                                        {
+                                                            $("#div1").html("");
+                                                            $('#div2').html("There is no restaurant for this event");
+                                                        }
+                                                    },
+                                                    error: function (err, result) {
+                                                        alert("Error in delete" + err.responseText);
+                                                    },
+              
+                                                });
+                                            }
+                                        }
+                                    });
+                                    });
+
+                            </script>
+                        </div>
+
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+    <script>
+        function Through_Ratings_drop(checkboxInput) {
+            $('#div2').html("");
+            var vals = [];
+            var e = [];
+            $('input:checkbox[name=Blanks1]:checked').each(function () {
+                vals.push($(this).val());
+            });
+            var checkboxData = vals;
+
+            var stateId = $("#area_list1").val();
+            var vals1 = [];
+            var e1 = [];
+            $('input:checkbox[name=Blanks]:checked').each(function () {
+                vals1.push($(this).val());
+            });
+            var checkboxData1 = vals1;
+            var ty = checkboxData1.length;
+            var myJsVariable = '@ViewBag.home10';
+            if(ty==0 && stateId=="all_areas")
+            {
+                $.ajax({
+                    type: 'POST',
+                    url: '/Frontpages/Through_Rating_CheckBox',
+                    data: JSON.stringify({ even: checkboxData, cate: myJsVariable }),
+                    dataType: 'json',
+                    contentType: 'application/json; charset=utf-8',
+                    success: function (result) {
+                        if(result!="[]")
+                        {
+
+                            $.dropdownlist_sle(result);     
+                        }
+                        else {
+                            $("#div1").html("");
+                            $('#div2').html("There is no restaurant against this rating");
+                        }
+                    },
+                    error: function (err, result) {
+                        alert("Error in delete" + err.responseText);
+                    },
+                });
+            }
+            else if(ty!=0 && stateId=="all_areas")
+            {
+                $.ajax({
+                    type: 'POST',
+                    url: '/Frontpages/Through_Categories_and_Ratings',
+                    data: JSON.stringify({ even: checkboxData, cate: myJsVariable, eve1 : checkboxData1 }),
+                    dataType: 'json',
+                    contentType: 'application/json; charset=utf-8',
+                    success: function (result) {
+                        if(result!="[]")
+                        {
+                            alert("in categories");
+                            $.dropdownlist_sle(result);     
+                        }
+                        else {
+                            $("#div1").html("");
+                            $('#div2').html("There is no restaurant against this rating");
+                        }
+                    },
+                    error: function (err, result) {
+                        alert("Error in delete" + err.responseText);
+                    },
+                });
+            }
+            else if(ty==0 && stateId!="all_areas")
+            {
+                $.ajax({
+                    type: 'POST',
+                    url: '/Frontpages/Through_Ratings_and_Area',
+                    data: JSON.stringify({ even:stateId , cate: myJsVariable, eve1 :  checkboxData }),
+                    dataType: 'json',
+                    contentType: 'application/json; charset=utf-8',
+                    success: function (result) {
+                        
+                        if(result!="[]")
+                        {
+                            alert(result);
+                            $.dropdownlist_sle(result);
+                        }
+
+                        else
+                        {
+                            $("#div1").html("");
+                            $('#div2').html("There is no restaurant for this event");
+                        }
+                    },
+                    error: function (err, result) {
+                        alert("Error in delete" + err.responseText);
+                    },
+              
+                });
+            }
+            else if(ty!=0 && stateId!="all_areas")
+            {
+                $.ajax({
+                    type: 'POST',
+                    url: '/Frontpages/Through_Categories_and_Area_and_Ratings',
+                    data: JSON.stringify({ even:checkboxData , cate: myJsVariable, eve1 :  checkboxData1 , eve2:stateId }),
+                    dataType: 'json',
+                    contentType: 'application/json; charset=utf-8',
+                    success: function (result) {
+                        
+                        if(result!="[]")
+                        {
+                            $.dropdownlist_sle(result);
+                        }
+
+                        else
+                        {
+                            $("#div1").html("");
+                            $('#div2').html("There is no restaurant for this event");
+                        }
+                    },
+                    error: function (err, result) {
+                        alert("Error in delete" + err.responseText);
+                    },
+              
+                });
+            }
+        }
+    </script>
+    <script>
+        function SomeMethod(checkboxInput) {
+            $('#div2').html("");
+            var vals = [];
+            var e = [];
+            $('input:checkbox[name=Blanks]:checked').each(function () {
+                vals.push($(this).val());
+            });
+            var checkboxData = vals;
+
+
+            var vals1 = [];
+            var e1 = [];
+            $('input:checkbox[name=Blanks1]:checked').each(function () {
+                vals1.push($(this).val());
+            });
+            var checkboxData1 = vals1;
+            var ty = checkboxData1.length;
+
+            var stateId = $("#area_list1").val();
+
+            var myJsVariable = '@ViewBag.home10';
+            if(ty==0 && stateId=="all_areas")
+            {
+                $.ajax({
+                    type: 'POST',
+                    url: '/Frontpages/Through_Event_CheckBox',
+                    data: JSON.stringify({ even: checkboxData, cate: myJsVariable }),
+                    dataType: 'json',
+                    contentType: 'application/json; charset=utf-8',
+                    success: function (result) {
+                   
+                        if(result!="[]")
+                        {
+                            $.dropdownlist_sle(result);
+                        }
+
+                        else
+                        {
+                            $("#div1").html("");
+                            $('#div2').html("There is no restaurant for this event");
+                        }
+                    },
+                    error: function (err, result) {
+                        alert("Error in delete" + err.responseText);
+                    },
+              
+                });
+            }
+            else if(ty != 0 && stateId== "all_areas")
+            {
+                $.ajax({
+                    type: 'POST',
+                    url: '/Frontpages/Through_Categories_and_Ratings',
+                    data: JSON.stringify({ even: checkboxData1, cate: myJsVariable, eve1 : checkboxData }),
+                    dataType: 'json',
+                    contentType: 'application/json; charset=utf-8',
+                    success: function (result) {
+                   
+                        if(result!="[]")
+                        {
+                            $.dropdownlist_sle(result);
+                        }
+
+                        else
+                        {
+                            $("#div1").html("");
+                            $('#div2').html("There is no restaurant for this event");
+                        }
+                    },
+                    error: function (err, result) {
+                        alert("Error in delete" + err.responseText);
+                    },
+              
+                });
+            }
+            else if(ty==0 && stateId!= "all_areas")
+            {
+               
+                if(stateId!="all_areas")
+                $.ajax({
+                    type: 'POST',
+                    url: '/Frontpages/Through_Categories_and_Area',
+                    data: JSON.stringify({ even:stateId , cate: myJsVariable, eve1 :  checkboxData }),
+                    dataType: 'json',
+                    contentType: 'application/json; charset=utf-8',
+                    success: function (result) {
+                        
+                        if(result!="[]")
+                        {
+                            $.dropdownlist_sle(result);
+                        }
+
+                        else
+                        {
+                            $("#div1").html("");
+                            $('#div2').html("There is no restaurant for this event");
+                        }
+                    },
+                    error: function (err, result) {
+                        alert("Error in delete" + err.responseText);
+                    },
+              
+                });
+            }
+            else if(ty!=0 && stateId!= "all_areas")
+            {
+                
+                if(stateId!="all_areas")
+                    $.ajax({
+                        type: 'POST',
+                        url: '/Frontpages/Through_Categories_and_Area_and_Ratings',
+                        data: JSON.stringify({ even:checkboxData1 , cate: myJsVariable, eve1 :  checkboxData , eve2:stateId }),
+                        dataType: 'json',
+                        contentType: 'application/json; charset=utf-8',
+                        success: function (result) {
+                        
+                            if(result!="[]")
+                            {
+                                $.dropdownlist_sle(result);
+                            }
+
+                            else
+                            {
+                                $("#div1").html("");
+                                $('#div2').html("There is no restaurant for this event");
+                            }
+                        },
+                        error: function (err, result) {
+                            alert("Error in delete" + err.responseText);
+                        },
+              
+                    });
+            }
+        }
+    </script>
+
+    <script>
+        function Through_SearchBox() {
+            $('#div2').html("");
+            $('#div1').html("");
+            var vals = [];
+            var e = [];
+            $('input:checkbox[name=Blanks1]:checked').each(function () {
+                vals.push($(this).val());
+            });
+            var checkboxData = vals;
+
+            var vals1 = [];
+            var e1 = [];
+            $('input:checkbox[name=Blanks]:checked').each(function () {
+                vals1.push($(this).val());
+            });
+            var checkboxData1 = vals1;
+
+            var ty1 = vals1.length;
+            var ty = vals.length;
+            var sea = document.getElementById("searchterm").value;
+            var myJsVariable = '@ViewBag.home10';
+         
+            $.ajax({
+                type: 'POST',
+                url: '/Frontpages/Through_Search',
+                data: JSON.stringify({ even: sea,cate:myJsVariable }),
+                dataType: 'json',
+                contentType: 'application/json; charset=utf-8',
+                success: function (result) {
+                    if (result == "[]")
+                    {
+                        $("#div1").html("");
+                        $('#div2').html("There is no such restaurant");
+                    }
+                    else
+                    {
+                    $.dropdownlist_sle(result);
+                    }
+
+                },
+                error: function (err, result) {
+                    alert("Error in delete" + err.responseText);
+                },
+            });
+            
+        }
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $.drop_slc = function (data) {
+                $('#div1').html("");
+                $("#div2").html("");
+                var len = data.length;
+                var txt = "";
+                if (len > 0) {
+                    for (var i = 0; i < len; i++) {
+
+                        var div_a = document.createElement("div");
+                        var element = document.getElementById("div2");
+                        div_a.setAttribute("style", "border:solid;margin-bottom:10px");
+                        div_a.classList.add('wrapper', 'row');
+                        var div_b = document.createElement("div");
+                        div_b.setAttribute("style", "padding-left:-15px;padding-top:10px; padding-bottom:10px");
+                        div_b.classList.add('col-lg-3');
+                        var img_a = document.createElement("img");
+                        img_a.setAttribute("style", "width:200px;height:200px");
+                        img_a.src = data[i].Restaurant_Image;
+                        // alert(img_a.src);
+                        div_b.appendChild(img_a);
+                        div_a.appendChild(div_b);
+
+                        var div_c = document.createElement("div");
+                        div_c.classList.add('col-lg-7');
+                        var div_p = document.createElement("p");
+                        var strong1 = document.createElement("strong");
+                        strong1.classList.add('color3');
+                        strong1.setAttribute("style", "font-weight:bold;font-size:350%;text-decoration:underline;  font-family:Brush Script Std, Brush Script MT, cursive");
+                        var node = document.createTextNode(data[i].Restaurant_Name);
+                        strong1.appendChild(node);
+                        var strong2 = document.createElement("strong");
+                        strong2.classList.add('color3');
+                        strong2.setAttribute("style", "font-weight:lighter;font-size:150%;");
+                        var node2 = document.createTextNode(data[i].Restaurant_Address);
+                        strong2.appendChild(node2);
+                        var strong3 = document.createElement("strong");
+                        strong3.classList.add('color3');
+                        strong3.setAttribute("style", "font-weight:bold;font-size:large;");
+                        var node3 = document.createTextNode("Price");
+                        strong3.appendChild(node3);
+                        var a1 = document.createElement("a");
+                        a1.classList.add('color3', 'fa', 'fa-map-marker');
+                        a1.setAttribute("style", "font-size:13px; color:blue;text-decoration:none");
+                        var a2 = document.createElement("a");
+                        a2.classList.add('color3');
+                        a2.setAttribute("style", "color:#088493");
+                        a2.setAttribute('href', "https://www.google.com/maps");
+                        a2.innerHTML = "Show on map";
+                        var a3 = document.createElement("a");
+                        a3.classList.add('color1');
+                        a3.setAttribute('href', "#");
+                        a3.innerHTML = "Read More";
+                        var div_d = document.createElement("div");
+                        div_d.classList.add('col-lg-2');
+                        var p3 = document.createElement("p");
+                        p3.setAttribute("style", "margin-right:100px;");
+                        var h_2 = document.createElement("h2");
+                        var node5 = document.createTextNode("Services");
+                        var input1 = document.createElement("input");
+                        input1.classList.add("hr"+city.Restaurant_Id);
+                        input1.id= ""+city.Restaurant_Id;
+                        input1.type = "button";
+                        input1.value = "Reserve Now";
+                        input1.setAttribute("style", "width:100px; height:40px; background-color:cornflowerblue; color:wheat; margin-top:40px;");
+                        h_2.appendChild(node5);
+                        p3.appendChild(h_2);
+                        p3.appendChild(document.createElement("br"));
+                        p3.appendChild(input1);
+                        div_d.appendChild(p3);
+                        div_p.appendChild(strong1);
+                        div_p.appendChild(document.createElement("br"));
+                        div_p.appendChild(strong2);
+                        div_p.appendChild(document.createElement("br"));
+                        div_p.appendChild(strong3);
+                        div_p.appendChild(document.createElement("br"));
+                        div_p.appendChild(a1);
+                        div_p.appendChild(a2);
+                        div_p.appendChild(document.createElement("br"));
+                        div_p.appendChild(document.createElement("br"));
+                        div_p.appendChild(a3);
+                        div_d.appendChild(p3);
+                        div_c.appendChild(div_p);
+                        div_a.appendChild(div_c);
+                        div_a.appendChild(div_d);
+                        element.appendChild(div_a);
+                    }
+                }
+            }
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $.dropdownlist_sle = function (result) {
+                $('#div1').html("");
+                var p = result.length;
+               var  i=0;
+                $.each($.parseJSON(result), function (i, city) {
+                    var div_a = document.createElement("div");
+                    div_a.setAttribute("style", "border: groove; border-width: 1px; margin-bottom: 10px");
+                    div_a.classList.add('wrapper', 'row','choose');
+                    div_a.id = ""+city.Restaurant_Id;
+                    var div_b = document.createElement("div");
+                    div_b.setAttribute("style", "padding-left:-15px;padding-top:10px; padding-bottom:10px");
+                    div_b.classList.add('col-lg-3');
+                    var img_a = document.createElement("img");
+                    img_a.setAttribute("style", "width:200px;height:200px");
+                    img_a.src = city.Restaurant_Image;
+                    div_b.appendChild(img_a);
+                    div_a.appendChild(div_b);
+                    var element = document.getElementById("div2");
+                    var div_c = document.createElement("div");
+                    div_c.classList.add('col-lg-7');
+                    var div_p = document.createElement("p");
+                    var strong1 = document.createElement("strong");
+                    strong1.classList.add('color3');
+                    strong1.setAttribute("style", "font-size: 150%; text-decoration: underline; font-family: Circular,Helvetica Neue,Helvetica,Arial,sans-serif");
+                    var node = document.createTextNode(city.Restaurant_Name);
+                    strong1.appendChild(node);
+                    var strong2 = document.createElement("strong");
+                    strong2.classList.add('color3');
+                    strong2.setAttribute("style", "font-weight:lighter;font-size:150%;");
+                    var node2 = document.createTextNode(city.Restaurant_Address);
+                    strong2.appendChild(node2);
+                    strong2.appendChild(document.createElement("br"));
+                    var strong3 = document.createElement("p");
+                    strong3.classList.add('color3');
+                    strong3.setAttribute("style", "font-size:large;margin-top:-20px;");
+                    var node3 = document.createTextNode("Per Head Price of the event:");
+                    var strong34 = document.createElement("strong");
+                    var node110 = document.createTextNode("1500/- (pkr)");
+                    strong34.appendChild(node110);
+                    strong3.appendChild(node3);
+                    strong3.appendChild(strong34);
+                    
+                    var a1 = document.createElement("a");
+                    a1.classList.add('color3', 'fa', 'fa-map-marker');
+                    a1.setAttribute("style", "font-size:13px; color:blue;text-decoration:none");
+                    var a2 = document.createElement("a");
+                    a2.classList.add('color3');
+                    a2.setAttribute("style", "color:#088493");
+                    a2.setAttribute('href', "https://www.google.com/maps");
+                    a2.innerHTML = "Show on map";
+                    //var a3 = document.createElement("a");
+                    //a3.classList.add('color1');
+                    //a3.setAttribute('href', "#");
+                    //a3.innerHTML = "Read More";
+                    var div_d = document.createElement("div");
+                    div_d.classList.add('col-lg-2');
+                    var p3 = document.createElement("p");
+                    p3.setAttribute("style", "margin-right:100px;");
+                //    var h_2 = document.createElement("h2");
+                  //  var node5 = document.createTextNode("Services");
+                    var input1 = document.createElement("input");
+                    input1.type = "button";
+                    input1.value = "Reserve Now";
+                   input1.classList.add("hr"+city.Restaurant_Id);
+                   input1.id = "" + city.Restaurant_Id;
+                    input1.setAttribute("style", "width:100px; height:40px; background-color:cornflowerblue; color:wheat; margin-top:20px;");
+                  //  h_2.appendChild(node5);
+                    //  p3.appendChild(h_2);
+                    var a10 = document.createElement("a");
+                  // a10.setAttribute('href', " ");
+                    a10.classList.add("hr" + city.Restaurant_Id);
+                    a10.id = ""+city.Restaurant_Id;
+                    a10.appendChild(input1);
+                    p3.appendChild(document.createElement("br"));
+                    p3.appendChild(a10);
+                    div_d.appendChild(p3);
+                    div_p.appendChild(strong1);
+                    div_p.appendChild(document.createElement("br"));
+                    div_p.appendChild(strong2);
+                    div_p.appendChild(document.createElement("br"));
+                    div_p.appendChild(strong3);
+                    div_p.appendChild(document.createElement("br"));
+                    div_p.appendChild(a1);
+                    div_p.appendChild(a2);
+                    div_p.appendChild(document.createElement("br"));
+                    div_p.appendChild(document.createElement("br"));
+                  //  div_p.appendChild(a3);
+                    div_d.appendChild(p3);
+                    div_c.appendChild(div_p);
+                    div_a.appendChild(div_c);
+                    div_a.appendChild(div_d);
+                    element.appendChild(div_a);
+                })
+
+            }
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+﻿.span12
+{
+    /**  background-image: url("https://www.walldevil.com/wallpapers/a30/5826-those-alienware-lost-background-web-screen.jpg"); **/
+   
+}
+
+
+.form-horizontal
+{
+
+    max-width: 500px;
+    padding: 19px 0px 19px 19px;
+    margin: 0 auto 20px;
+    background-color: #fff;
+    border: 1px hidden #e5e5e5;
+    border-radius: 3px;
+    
+    
+
+
+}
+#btn
+{
+
+    margin:auto;
+
+}

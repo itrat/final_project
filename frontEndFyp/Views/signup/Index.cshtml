@@ -1,0 +1,110 @@
+﻿@{
+    ViewBag.Title = "sign_up";
+
+}
+
+<head>
+    <title>Forms</title>
+    <!-- Bootstrap -->
+    <link href="~/Models/Bootstrap-Admin-Theme-master/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Models/Bootstrap-Admin-Theme-master/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
+    <link href="~/Models/Bootstrap-Admin-Theme-master/assets/styles.css" rel="stylesheet" media="screen">
+    <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="vendors/flot/excanvas.min.js"></script><![endif]-->
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <script src="~/Models/Bootstrap-Admin-Theme-master/vendors/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+
+    <link href="~/Models/Bootstrap-Admin-Theme-master/vendors/datepicker.css" rel="stylesheet" media="screen">
+    <link href="~/Models/Bootstrap-Admin-Theme-master/vendors/uniform.default.css" rel="stylesheet" media="screen">
+    <link href="~/Models/Bootstrap-Admin-Theme-master/vendors/chosen.min.css" rel="stylesheet" media="screen">
+    <link href="~/Models/Bootstrap-Admin-Theme-master/vendors/wysiwyg/bootstrap-wysihtml5.css" rel="stylesheet" media="screen">
+    <script src="~/Models/Bootstrap-Admin-Theme-master/vendors/jquery-1.9.1.js"></script>
+    <script src="~/Models/Bootstrap-Admin-Theme-master/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/Models/Bootstrap-Admin-Theme-master/vendors/jquery.uniform.min.js"></script>
+    <script src="~/Models/Bootstrap-Admin-Theme-master/vendors/chosen.jquery.min.js"></script>
+    <script src="~/Models/Bootstrap-Admin-Theme-master/vendors/bootstrap-datepicker.js"></script>
+    <script src="~/Models/Bootstrap-Admin-Theme-master/vendors/wysiwyg/wysihtml5-0.3.0.js"></script>
+    <script src="~/Models/Bootstrap-Admin-Theme-master/vendors/wysiwyg/bootstrap-wysihtml5.js"></script>
+    <script src="~/Models/Bootstrap-Admin-Theme-master//wizard/jquery.bootstrap.wizard.min.js"></script>
+    <script type="text/javascript" src="vendors/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/Models/Bootstrap-Admin-Theme-master/assets/form-validation.js"></script>
+
+    <script src="~/Models/Bootstrap-Admin-Theme-master/assets/scripts.js"></script>
+
+    <link href="~/Models/Bootstrap-Admin-Theme-master/assets/StyleSheet2.css" rel="stylesheet" />
+
+</head>
+
+<div class="span12">
+    <form class="form-horizontal">
+        <fieldset>
+            <legend>            User Information            </legend>
+            <div class="control-group">
+                <label class="control-label" for="First Name"> First Name </label>
+                <div class="controls">
+                    <input class="input-xlarge focused" type="text">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="Last Name"> Last Name </label>
+                <div class="controls">
+                    <input class="input-xlarge focused" type="text">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="CNIC">CNIC</label>
+                <div class="controls">
+                    <input class="input-xlarge focused" type="text">
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" for="Adress"> Adress </label>
+                <div class="controls">
+                    <input class="input-xlarge focused" type="text">
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" for="Phone#"> Phone# </label>
+                <div class="controls">
+                    <input class="input-xlarge focused" type="text">
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" for="E-mail"> E-mail </label>
+                <div class="controls">
+                    <input class="input-xlarge focused" type="text">
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" for="Age"> Age </label>
+                <div class="controls">
+                    <input class="input-xlarge focused" type="text">
+                </div>
+            </div>
+
+            <div class="control-group success">
+                <label class="control-label" for="selectError">Gender</label>
+                <div class="controls">
+                    <select id="selectError">
+                        <option>Male</option>
+                        <option>Female</option>
+                        <option>Other</option>
+
+                    </select>
+                    <span class="help-inline">Woohoo!</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <button type="submit" class="btn btn-primary">Save changes</button>
+                <button type="reset" class="btn">Cancel</button>
+            </div>
+        </fieldset>
+    </form>
+
+</div>

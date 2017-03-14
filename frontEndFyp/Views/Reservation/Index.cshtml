@@ -1,0 +1,114 @@
+﻿@model IEnumerable<frontEndFyp.Models.Reservation>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Reservation_Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Time_In)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Time_Out)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Total_Persons)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Total_Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Decoration.Decoration_Type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SoundSystem.Sound_Type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Food.Food_Item)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Restaurant.Restaurant_Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.User.User_F_Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.User.User_L_Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Event.Event_Type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Reservation_Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Time_In)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Time_Out)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Total_Persons)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Total_Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Decoration.Decoration_Type)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SoundSystem.Sound_Type)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Food.Food_Item)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Restaurant.Restaurant_Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.User.User_F_Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.User.User_L_Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Event.Event_Type)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Reservation_Id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Reservation_Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Reservation_Id })
+                </td>
+            </tr>
+        }
+
+    </table>
+</body>
+</html>

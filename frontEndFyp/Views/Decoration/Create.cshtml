@@ -1,0 +1,196 @@
+﻿@{
+    ViewBag.Title = "home";
+    Layout = "~/Views/Shared/frontend.cshtml";
+}<link href="~/Content/newdesign/css/agency.min.css" rel="stylesheet">
+<style>
+    ul {
+        list-style-type: none;
+        margin-left: 30px 30px 0px 0px;
+        padding: 30px 30px 0x 0px;
+        overflow: hidden;
+        background-color: #664879;
+        width: auto;
+    }
+
+    .cont #cont {
+        margin-left: 30px 30px 0px 0px;
+        padding: 30px 30px 0x 0px;
+    }
+
+    #bs-example-navbar-collapse-1 {
+        margin-left: 30px 30px 0px 0px;
+        padding: 30px 30px 0x 0px;
+    }
+
+    li {
+        float: left;
+    }
+
+    .nav navbar-nav navbar-right li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    nav navbar-nav navbar li a:hover:not(.active) {
+        background-color: #fed136;
+    }
+
+    .active {
+        background-color: #4CAF50;
+    }
+
+    body {
+        background-color: #f5f2f2;
+    }
+</style>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Eventi</title>
+    <!-----Including CSS for different screen sizes----->
+    <link rel="stylesheet" type="text/css" href="~/Content/forms/responsiveform.css">
+    <link rel="stylesheet" media="screen and (max-width: 1200px) and (min-width: 601px)" href="~/Content/forms/responsiveform1.css" />
+    <link rel="stylesheet" media="screen and (max-width: 600px) and (min-width: 351px)" href="~/Content/forms/responsiveform2.css" />
+
+    <link rel="stylesheet" media="screen and (max-width: 350px)" href="~/Content/forms/responsiveform3.css" />
+</head>
+<body>
+    <nav id="mainNav" style="background-color: #664879" class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container">
+
+            <!-- Brand and toggle get grouped for better mobile display -->
+
+
+            <div class="navbar-header page-scroll">
+
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+
+                <a class="navbar-brand page-scroll" style="color: yellow; font-size: 50px;padding-left:10px" href="#page-top">Eventi</a></br>
+
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" class="cont">
+                <ul class="nav navbar-nav navbar" style="margin-top:5px; margin-left:70px">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a href="home" class="page-scroll">Home</a>
+                    </li>
+
+                    <li>
+                        <a class="page-scroll" href="#portfolio">Categories</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#about">About</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#team">Team</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact">Contact</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="faq">FAQ</a>
+                    </li>
+                    <li>
+                        <a href="../frontpages/privacypolicy">Privacy Policy</a>
+                    </li>
+                </ul>
+                <div style="display: flex;float:right;margin-right:85px;">
+                    <div style="padding-right:5px">
+                        <a href="../semiadmin/create" style="height:40px;width:100px;">Sign In</a>
+                    </div>
+                    <div style=" margin-right:5px">
+                        <a href="../semiadmin/create" style="height: 40px; width: 100px;">Sign Up</a>
+                    </div>
+
+                </div>
+                <!--     <div style="float:right;margin-right:-40px">
+                          <input type="text" name="search" placeholder="  Search Hall/Restaurant.." style="height:2em; width:15em; margin-top:1px;" id="hwq" />
+                          <span> <button style="background-color: blue; color: white; margin-top: 1px; height:30px"><a href="" id="go">Search</a></button></span>
+                      </div>
+                    -->
+
+            </div>
+
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+
+    </nav>
+
+    <div id="envelope" style="background-color: #ffffff; margin-top:100px;  ">
+        <header style="background-color: #5b9aa0; background-image: none">
+            <h2>Decoration Creation</h2>
+
+        </header>
+        <hr>
+        <form action="#" method="post">
+            <div class="form-group">
+                <label>Select Restaurant</label>
+                @foreach (var item in @ViewBag.Name)
+                {
+                    <input class="form-control" id="exampleInputPassword33" name="Restaurant_Name" value="@item.Restaurant_Name" disabled>
+
+                }
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Decoration Type:</label>
+                <br />
+                <input class="form-control" id="exampleInputPassword1" name="Decoration_Type" placeholder="Total Price" type="text" required="required" >
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Total Price:</label>
+                <br />
+                <input class="form-control" id="exampleInputPassword1" name="Decoration_Price" placeholder="Total Price" type="text" required="required" onkeypress="return isNumberKey(event)">
+            </div>
+            <div class="box-footer">
+                <button type="submit" class="btn btn-primary" style="background-color: blue;" id="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+    <script type="text/javascript">
+        var picker = new Pikaday(
+        {
+            field: document.getElementById('TextBox1'),
+            firstDay: 1,
+            minDate: new Date('2000-01-01'),
+            maxDate: new Date('2020-12-31'),
+            yearRange: [2000, 2020],
+            numberOfMonths: 1,
+            theme: 'light-theme'
+        });
+
+        function isNumberKey(evt) {
+            var charCode = (evt.which) ? evt.which : evt.keyCode;
+            if (charCode != 46 && charCode > 31
+            && (charCode < 48 || charCode > 57))
+                return false;
+
+            return true;
+        }
+
+    </script>
+
+
+    <script type="text/javascript">
+        function myfunction() {
+            $('#sample').ptTimeSelect();
+        }
+        $(document).ready(function () {
+            // find the input fields and apply the time select to them.
+            $('#sample1 input').ptTimeSelect();
+
+
+        });
+    </script>
+
+</body>
+</html>

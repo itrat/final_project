@@ -1,0 +1,72 @@
+﻿@model frontEndFyp.Models.User
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>User</legend>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.User_Id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.User_Id)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.User_Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.User_Name)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.User_CNIC)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.User_CNIC)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.User_Email)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.User_Email)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.User_Phone_)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.User_Phone_)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.password)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.password)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Adminapproval)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Adminapproval)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.roleId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.roleId)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.User_Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

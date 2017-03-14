@@ -1,0 +1,53 @@
+﻿@model IEnumerable<frontEndFyp.Models.Food>
+
+    @{
+        ViewBag.Title = "Index";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+
+    <h2>Index</h2>
+
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Food_Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Restaurant.Restaurant_Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Food_Item)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Food_Price)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Food_Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Restaurant.Restaurant_Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Food_Item)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Food_Price)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Food_Id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Food_Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Food_Id })
+                </td>
+            </tr>
+        }
+
+    </table>

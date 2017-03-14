@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="66c0d1fdce804b16984d02f9a21406e4" Name="Diagram1">
+        <EntityTypeShape EntityType="Model.Event" Width="1.5" PointX="3" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.FeedBack" Width="1.5" PointX="3" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Food" Width="1.5" PointX="3" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Image" Width="1.5" PointX="3" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Mail" Width="1.5" PointX="8.25" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Message" Width="1.5" PointX="8.25" PointY="18.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Payment" Width="1.5" PointX="10.5" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Reservation" Width="1.5" PointX="8.25" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Restaurant" Width="1.5" PointX="0.75" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.sysdiagram" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.User" Width="1.5" PointX="6" PointY="13.25" IsExpanded="true" />
+        <AssociationConnector Association="Model.FK_Events_Restaurants" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Reservations_Events" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_FeedBacks_Restaurants" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Foods_Restaurants" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Reservations_Foods" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Images_Restaurants" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Mails_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Messages_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Payment_Reservations" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Reservations_Restaurants" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Reservations_Users" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="Model.Event_Images" Width="1.5" PointX="5.25" PointY="10.25" />
+        <AssociationConnector Association="Model.FK_Event_Images_FeedBacks" />
+        <EntityTypeShape EntityType="Model.Decoration" Width="1.5" PointX="3" PointY="2.75" />
+        <AssociationConnector Association="Model.FK_Decorations_Restaurants" />
+        <AssociationConnector Association="Model.FK_Reservations_Decorations" />
+        <EntityTypeShape EntityType="Model.SoundSystem" Width="1.5" PointX="3" PointY="18.75" />
+        <AssociationConnector Association="Model.FK_Reservations_SoundSystems" />
+        <AssociationConnector Association="Model.FK_SoundSystems_Restaurants" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
